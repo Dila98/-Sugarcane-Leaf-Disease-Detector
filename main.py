@@ -8,10 +8,12 @@ import cv2
 from ultralytics import YOLO
 from fastapi.staticfiles import StaticFiles
 
-app.mount("/", StaticFiles(directory="build", html=True), name="frontend")
-
 
 app = FastAPI()
+
+# app.mount("/", StaticFiles(directory="build", html=True), name="frontend")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # CORS for frontend on localhost:3000
 app.add_middleware(
