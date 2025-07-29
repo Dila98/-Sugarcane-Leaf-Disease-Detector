@@ -44,14 +44,7 @@ tqdm==4.67.1
 typing-inspection==0.4.1
 typing_extensions==4.14.1
 tzdata==2025.2
-ultralytics==8.3.170
 ultralytics-thop==2.0.14
+ultralytics==8.3.170
 urllib3==2.5.0
 uvicorn==0.35.0
-fastapi
-uvicorn
-ultralytics
-torch
-opencv-python
-numpy
-# add others you use
