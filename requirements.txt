@@ -48,3 +48,10 @@ ultralytics==8.3.170
 ultralytics-thop==2.0.14
 urllib3==2.5.0
 uvicorn==0.35.0
+fastapi
+uvicorn
+ultralytics
+torch
+opencv-python
+numpy
+# add others you use
