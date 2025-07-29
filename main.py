@@ -6,6 +6,10 @@ import shutil
 import os
 import cv2
 from ultralytics import YOLO
+from fastapi.staticfiles import StaticFiles
+
+app.mount("/", StaticFiles(directory="build", html=True), name="frontend")
+
 
 app = FastAPI()
 
