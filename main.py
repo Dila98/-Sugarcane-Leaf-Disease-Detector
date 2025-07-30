@@ -13,6 +13,7 @@ app = FastAPI()
 
 # app.mount("/", StaticFiles(directory="build", html=True), name="frontend")
 # app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/", StaticFiles(directory="build", html=True), name="frontend")
 
 
 # CORS for frontend on localhost:3000
@@ -25,7 +26,7 @@ app.add_middleware(
 )
 
 # Load YOLO model
-model = YOLO("/Users/pathumdilshan/Desktop/yolo-predictor/best.pt")  # Fixed: just the filename since it's in the same folder
+model = YOLO("best.pt")  # Fixed: just the filename since it's in the same folder
 
 # Create folders if not exist
 os.makedirs("temp", exist_ok=True)
@@ -61,9 +62,10 @@ async def predict(file: UploadFile = File(...)):
     return JSONResponse(
         content={
             "disease": disease_summary,
-            "annotated_image_url": f"http://localhost:8000/static/annotated_{file.filename}"
+            "annotated_image_url": f"https://sugarcane-leaf-disease-detector.onrender.com/static/annotated_{file.filename}"
         }
     )
+    
 
 # Serve static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
